@@ -155,7 +155,7 @@
 
                 const subTotalPrice = firstClassCount * 150 + economyClassCount * 100;
                 document.getElementById("subTotal").innerText = "$" + subTotalPrice;
-                const tax = subTotalPrice * 0.1;
+                const tax = Math.round(subTotalPrice * 0.1);
                 console.log(tax);
                 document.getElementById("tax").innerText = "$" + tax;
                 const totalPrice = subTotalPrice + tax;
