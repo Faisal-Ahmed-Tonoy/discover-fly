@@ -75,7 +75,9 @@ a.active {
 }
 
 .inp-width {
-    min-width: 300px;
+    min-width: 287px;
+    border: 1px solid !important;
+    border-radius: 10px;
 }
 
 .plus-minus-btn {
@@ -84,6 +86,7 @@ a.active {
     padding: 2px;
     margin-top: 10px;
     word-spacing: 20px;
+    cursor: pointer;
 }
 
 .booking-form .calculations {
