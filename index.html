@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+
 <html lang="en">
 
 <head>
@@ -25,9 +27,8 @@
             </ul>
         </nav>
     </header>
-
     <!--Booking Section-->
-    <main class="main-content container">
+    <section class="main-content container">
         <div id="book-now" class="booking-form">
             <h3>Booking Flights</h3>
             <div class="input-group">
@@ -48,7 +49,6 @@
                     <input class="inp-style" type="date" name="">
                 </div>
             </div>
-
             <div class="input-group f-class ">
                 <div>
                     <label for=" ">First Class ($150)</label>
@@ -69,9 +69,6 @@
                     <button onclick="handleTicketChange('economy',false)" class="plus-minus-btn "><i class="fas fa-minus "></i></button>
                 </div>
             </div>
-
-
-
             <div class="calculations">
                 <div class="amount">
                     <div class="left">
@@ -82,7 +79,6 @@
                         </p>
                     </div>
                 </div>
-
                 <div class="amount">
                     <div class="left">
                         <p>Charge 10% VAT</p>
@@ -102,107 +98,103 @@
                 </div>
             </div>
             <button onclick="myFunction()" class="btn-style">Book Now</button>
-
-
         </div>
-        <div id="booking-status-one">
-
+        <!--Booking alert section start-->
+        <div id="booking-status-one"> </div>
+        <div id="booking-status-two">
         </div>
-        <div id="booking-status-two"> </div>
         <div id="booking-status-four"></div>
         <div id="booking-status-three"></div>
-
-
-
+        <!--Booking alert section end-->
         <div class="booking-content">
             <h1>discover <br> around the world</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
         </div>
-        </section>
+    </section>
+
+    <!--JavaScript Start-->
+
+    <script>
+        //Cart-handler start
 
 
-
-
-        <!--JavaScript Start-->
-        <script>
-            //Cart-handler start
-
-            function handleTicketChange(ticket, isIncrease) {
-                const ticketInput = document.getElementById(ticket + "-count");
-                const ticketCount = getInputValue(ticket);;
-                let ticketNewCount = ticketCount;
-                if (isIncrease == true) {
-                    ticketNewCount = ticketCount + 1;
-                }
-                if (isIncrease == false && ticketCount > 0) {
-                    ticketNewCount = ticketCount - 1;
-                }
-                ticketInput.value = ticketNewCount;
-                calculateTotal();
-            };
-            //Cart-handler End
-
-
-            //Function for calculate total start
-
-
-            function calculateTotal() {
-                const firstClassCount = getInputValue('first');
-                const economyClassCount =
-                    getInputValue('economy');
-                const subTotalPrice = firstClassCount * 150 + economyClassCount * 100;
-                document.getElementById("subTotal").innerText = "$" + subTotalPrice;
-                const tax = Math.round(subTotalPrice * 0.1);
-                console.log(tax);
-                document.getElementById("tax").innerText = "$" + tax;
-                const totalPrice = subTotalPrice + tax;
-                document.getElementById("total").innerText = "$" + totalPrice;
+        function handleTicketChange(ticket, isIncrease) {
+            const ticketInput = document.getElementById(ticket + "-count");
+            const ticketCount = getInputValue(ticket);;
+            let ticketNewCount = ticketCount;
+            if (isIncrease == true) {
+                ticketNewCount = ticketCount + 1;
             }
-            //Function for calculate total end
-
-
-
-            //Function for input Start
-
-            function getInputValue(ticket) {
-                const ticketInput = document.getElementById(ticket + '-count');
-                const ticketCount = parseInt(ticketInput.value);
-                return ticketCount;
+            if (isIncrease == false && ticketCount > 0) {
+                ticketNewCount = ticketCount - 1;
             }
-            //Function for input End
+            ticketInput.value = ticketNewCount;
+            calculateTotal();
+        };
+        //Cart-handler End
+
+
+        //Function for calculate total start
+
+
+        function calculateTotal() {
+            const firstClassCount = getInputValue('first');
+            const economyClassCount =
+                getInputValue('economy');
+            const subTotalPrice = firstClassCount * 150 + economyClassCount * 100;
+            document.getElementById("subTotal").innerText = "$" + subTotalPrice;
+            const tax = Math.round(subTotalPrice * 0.1);
+            console.log(tax);
+            document.getElementById("tax").innerText = "$" + tax;
+            const totalPrice = subTotalPrice + tax;
+            document.getElementById("total").innerText = "$" + totalPrice;
+        }
+        //Function for calculate total end
 
 
 
-            //Function for booking result start
+        //Function for input Start
 
-            function myFunction() {
-                const firstClassValue = document.getElementById("first-count").value;
-                const economyClassValue = document.getElementById("economy-count").value
-                if (firstClassValue == 0 && economyClassValue == 0) {
-                    document.getElementById("book-now").style.display = "none";
-                    document.getElementById("booking-status-one").style.display = "block";
-                    document.getElementById("booking-status-one").innerText = ("You didn't purchases anything. Please try again. Thankyou.");
-
-                } else if (firstClassValue == 0) {
-                    document.getElementById("book-now").style.display = "none";
-                    document.getElementById("booking-status-two").style.display = "block";
-                    document.getElementById("booking-status-two").innerText = ("You have purchased" + " " + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes. Thankyou for staying with us.");
-                } else if (economyClassValue == 0) {
-                    document.getElementById("book-now").style.display = "none";
-                    document.getElementById("booking-status-three").style.display = "block";
-                    document.getElementById("booking-status-three").innerText = ("You have purchased" + " " + firstClassValue + " " + " first class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes. Thankyou for staying with us.");
-
-                } else {
-                    document.getElementById("book-now").style.display = "none";
-                    document.getElementById("booking-status-four").style.display = "block";
-                    document.getElementById("booking-status-four").innerText = ("You have purchased" + " " + firstClassValue + " " + "first class tickets" + "  " + "& " + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes. Thankyou for staying with us.");
+        function getInputValue(ticket) {
+            const ticketInput = document.getElementById(ticket + '-count');
+            const ticketCount = parseInt(ticketInput.value);
+            return ticketCount;
+        }
+        //Function for input End
 
 
-                }
+
+        //Function for booking result start
+
+        function myFunction() {
+            const firstClassValue = document.getElementById("first-count").value;
+            const economyClassValue = document.getElementById("economy-count").value
+            if (firstClassValue == 0 && economyClassValue == 0) {
+                document.getElementById("book-now").style.display = "none";
+                document.getElementById("booking-status-one").style.display = "block";
+                document.getElementById("booking-status-one").innerText = ("You didn't purchases anything. Please try again. Thankyou.");
+
+            } else if (firstClassValue == 0) {
+                document.getElementById("book-now").style.display = "none";
+                document.getElementById("booking-status-two").style.display = "block";
+                document.getElementById("booking-status-two").innerText = ("You have purchased" + " " + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", including tax. Thankyou for staying with us.");
+            } else if (economyClassValue == 0) {
+                document.getElementById("book-now").style.display = "none";
+                document.getElementById("booking-status-three").style.display = "block";
+                document.getElementById("booking-status-three").innerText = ("You have purchased" + " " + firstClassValue + " " + " first class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", including tax. Thankyou for staying with us.");
+
+            } else {
+                document.getElementById("book-now").style.display = "none";
+                document.getElementById("booking-status-four").style.display = "block";
+                document.getElementById("booking-status-four").innerText = ("You have purchased" + " " + firstClassValue + " " + "first class tickets" + "  " + "& " + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", including tax. Thankyou for staying with us.");
+
+
             }
-            //Function for booking result end
-        </script>
-        <!--JavaScript End-->
+        }
+        //Function for booking result end
+    </script>
+
+    <!--JavaScript End-->
 
 
 </body>
