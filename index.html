@@ -101,7 +101,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button onclick="myFunction()" class="btn-style">Book Now</button>
         </div>
 
         <div class="booking-content">
@@ -169,6 +169,15 @@
                 const ticketInput = document.getElementById(ticket + '-count');
                 const ticketCount = parseInt(ticketInput.value);
                 return ticketCount;
+
+            }
+
+            function myFunction() {
+                if ((document.getElementById("first-count").value) == 0 && (document.getElementById("economy-count").value) == 0) {
+                    console.log("hello");
+                } else {
+                    console.log("new");
+                }
 
             }
 
