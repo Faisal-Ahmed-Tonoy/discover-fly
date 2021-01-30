@@ -179,21 +179,21 @@
                 if (firstClassValue == 0 && economyClassValue == 0) {
                     document.getElementById("book-now").style.display = "none";
                     document.getElementById("text-show-one").style.display = "block";
-                    document.getElementById("text-show-one").innerText = "You didn't purchases anything";
+                    document.getElementById("text-show-one").innerText = ("You didn't purchases anything. Please try again. Thankyou.");
 
                 } else if (firstClassValue == 0) {
                     document.getElementById("book-now").style.display = "none";
                     document.getElementById("text-show-two").style.display = "block";
-                    document.getElementById("text-show-two").innerText = ("You have purchased" + " " + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes");
+                    document.getElementById("text-show-two").innerText = ("You have purchased" + " " + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes. Thankyou for staying with us.");
                 } else if (economyClassValue == 0) {
                     document.getElementById("book-now").style.display = "none";
                     document.getElementById("text-show-three").style.display = "block";
-                    document.getElementById("text-show-three").innerText = ("You have purchased" + " " + firstClassValue + " " + " first class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes");
+                    document.getElementById("text-show-three").innerText = ("You have purchased" + " " + firstClassValue + " " + " first class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes. Thankyou for staying with us.");
 
                 } else {
                     document.getElementById("book-now").style.display = "none";
                     document.getElementById("text-show-four").style.display = "block";
-                    document.getElementById("text-show-four").innerText = ("You have purchased" + " " + firstClassValue + " " + "first class" + " " + "&" + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes");
+                    document.getElementById("text-show-four").innerText = ("You have purchased" + " " + firstClassValue + " " + "first class tickets" + "  " + "& " + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes. Thankyou for staying with us.");
 
 
                 }
