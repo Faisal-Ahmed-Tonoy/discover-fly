@@ -105,10 +105,10 @@
 
 
         </div>
-        <div id="text-show-one">
-            <h1>You have purchased 3 first class tickets and your total cost for that $495 , tax includes</h1>
-
-        </div>
+        <div id="text-show-one"> </div>
+        <div id="text-show-two"> </div>
+        <div id="text-show-three"> </div>
+        <div id="text-show-four"> </div>
 
 
 
@@ -179,12 +179,23 @@
                 if (firstClassValue == 0 && economyClassValue == 0) {
                     document.getElementById("book-now").style.display = "none";
                     document.getElementById("text-show-one").style.display = "block";
+                    document.getElementById("text-show-one").innerText = "You didn't purchases anything";
+
                 } else if (firstClassValue == 0) {
-                    document.write("You have purchased" + " " + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes");
+                    document.getElementById("book-now").style.display = "none";
+                    document.getElementById("text-show-two").style.display = "block";
+                    document.getElementById("text-show-two").innerText = ("You have purchased" + " " + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes");
                 } else if (economyClassValue == 0) {
-                    document.write("You have purchased" + " " + firstClassValue + " " + " first class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes");
+                    document.getElementById("book-now").style.display = "none";
+                    document.getElementById("text-show-three").style.display = "block";
+                    document.getElementById("text-show-three").innerText = ("You have purchased" + " " + firstClassValue + " " + " first class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes");
+
                 } else {
-                    document.write("You have purchased" + " " + firstClassValue + " " + "first class" + " " + "&" + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes");
+                    document.getElementById("book-now").style.display = "none";
+                    document.getElementById("text-show-four").style.display = "block";
+                    document.getElementById("text-show-four").innerText = ("You have purchased" + " " + firstClassValue + " " + "first class" + " " + "&" + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes");
+
+
                 }
             }
             //Function for booking result end
