@@ -28,7 +28,7 @@
 
     <!--Booking Section-->
     <main class="main-content container">
-        <div class="booking-form">
+        <div id="book-now" class="booking-form">
             <h3>Booking Flights</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
@@ -102,7 +102,15 @@
                 </div>
             </div>
             <button onclick="myFunction()" class="btn-style">Book Now</button>
+
+
         </div>
+        <div id="text-show-one">
+            <h1>You have purchased 3 first class tickets and your total cost for that $495 , tax includes</h1>
+
+        </div>
+
+
 
         <div class="booking-content">
             <h1>discover <br> around the world</h1>
@@ -169,7 +177,8 @@
                 const firstClassValue = document.getElementById("first-count").value;
                 const economyClassValue = document.getElementById("economy-count").value
                 if (firstClassValue == 0 && economyClassValue == 0) {
-                    document.write("You didn't  purchase anything");
+                    document.getElementById("book-now").style.display = "none";
+                    document.getElementById("text-show-one").style.display = "block";
                 } else if (firstClassValue == 0) {
                     document.write("You have purchased" + " " + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes");
                 } else if (economyClassValue == 0) {
