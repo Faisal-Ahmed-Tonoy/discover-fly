@@ -113,46 +113,33 @@
 
 
 
-
+        <!--JavaScript Start-->
         <script>
+            //Cart-handler start
+
             function handleTicketChange(ticket, isIncrease) {
                 const ticketInput = document.getElementById(ticket + "-count");
                 const ticketCount = getInputValue(ticket);;
                 let ticketNewCount = ticketCount;
                 if (isIncrease == true) {
                     ticketNewCount = ticketCount + 1;
-
                 }
                 if (isIncrease == false && ticketCount > 0) {
                     ticketNewCount = ticketCount - 1;
-
                 }
                 ticketInput.value = ticketNewCount;
-
-                // let ticketTotal = 0;
-                // if (ticket == 'first') {
-                //     ticketTotal = ticketNewCount * 150;
-
-                // }
-                // if (ticket == 'economy') {
-                //     ticketTotal = ticketNewCount * 100;
-
-                // }
-
                 calculateTotal();
-
             };
+            //Cart-handler End
+
+
+            //Function for calculate total start
+
 
             function calculateTotal() {
-
                 const firstClassCount = getInputValue('first');
-
-
-
-                const economyClassCount = getInputValue('economy');
-
-
-
+                const economyClassCount =
+                    getInputValue('economy');
                 const subTotalPrice = firstClassCount * 150 + economyClassCount * 100;
                 document.getElementById("subTotal").innerText = "$" + subTotalPrice;
                 const tax = Math.round(subTotalPrice * 0.1);
@@ -160,93 +147,40 @@
                 document.getElementById("tax").innerText = "$" + tax;
                 const totalPrice = subTotalPrice + tax;
                 document.getElementById("total").innerText = "$" + totalPrice;
-
-
-
             }
+            //Function for calculate total end
+
+
+
+            //Function for input Start
 
             function getInputValue(ticket) {
                 const ticketInput = document.getElementById(ticket + '-count');
                 const ticketCount = parseInt(ticketInput.value);
                 return ticketCount;
-
             }
+            //Function for input End
+
+
+
+            //Function for booking result start
 
             function myFunction() {
                 const firstClassValue = document.getElementById("first-count").value;
                 const economyClassValue = document.getElementById("economy-count").value
                 if (firstClassValue == 0 && economyClassValue == 0) {
-                    console.log("hello");
+                    document.write("You didn't  purchase anything");
                 } else if (firstClassValue == 0) {
-                    console.log(economyClassValue, document.getElementById("total").innerText);
+                    document.write("You have purchased" + " " + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes");
                 } else if (economyClassValue == 0) {
-                    console.log(firstClassValue, document.getElementById("total").innerText);
+                    document.write("You have purchased" + " " + firstClassValue + " " + " first class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes");
                 } else {
-                    console.log(economyClassValue, firstClassValue, document.getElementById("total").innerText);
-
+                    document.write("You have purchased" + " " + firstClassValue + " " + "first class" + " " + "&" + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes");
                 }
-
-
             }
-
-
-            // function firstClassTicketChange(isIncrease) {
-            //     const firstClassInput = document.getElementById("first-class-count");
-            //     const firstClassCount = parseInt(firstClassInput.value);
-            //     let firstClassNewCount = firstClassCount;
-            //     if (isIncrease == true) {
-            //         firstClassNewCount = firstClassCount + 1;
-
-            //     }
-            //     if (isIncrease == false && firstClassCount > 0) {
-            //         firstClassNewCount = firstClassCount - 1;
-
-            //     }
-            //     firstClassInput.value = firstClassNewCount;
-            //     firstClassTotal = firstClassNewCount * 150;
-
-            // }
-
-
-            // function economyClassTicketChange(isIncrease) {
-            //     const economyClassInput = document.getElementById("economy-class-count");
-            //     const economyClassCount = parseInt(economyClassInput.value);
-            //     let economyClassNewCount = economyClassCount;
-            //     if (isIncrease == true) {
-            //         economyClassNewCount = economyClassCount + 1;
-
-            //     }
-            //     if (isIncrease == false && economyClassCount > 0) {
-            //         economyClassNewCount = economyClassCount - 1;
-
-            //     }
-            //     economyClassInput.value = economyClassNewCount;
-            //     economyClassTotal = economyClassNewCount * 100;
-
-            // }
-
-
-
-
-            // document.getElementById("first-class-increase").addEventListener('click', function() {
-            //     const firstClassInput = document.getElementById("first-class-count");
-            //     const firstClassCount = parseInt(firstClassInput.value);
-            //     const firstClassNewCount = firstClassCount + 1;
-            //     firstClassInput.value = firstClassNewCount;
-            //     firstClassTotal = firstClassNewCount * 150;
-
-
-            // });
-
-
-            // document.getElementById("first-class-decrease").addEventListener('click', function() {
-            //     const firstClassInput = document.getElementById("first-class-count");
-            //     const firstClassCount = parseInt(firstClassInput.value);
-            //     const firstClassNewCount = firstClassCount - 1;
-            //     firstClassInput.value = firstClassNewCount;
-            //     firstClassTotal = firstClassNewCount * 150;
-            // });
+            //Function for booking result end
         </script>
+        <!--JavaScript Start-->
 
         <!--Thank You-->
 </body>
