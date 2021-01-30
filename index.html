@@ -177,9 +177,15 @@
                 const economyClassValue = document.getElementById("economy-count").value
                 if (firstClassValue == 0 && economyClassValue == 0) {
                     console.log("hello");
+                } else if (firstClassValue == 0) {
+                    console.log(economyClassValue, document.getElementById("total").innerText);
+                } else if (economyClassValue == 0) {
+                    console.log(firstClassValue, document.getElementById("total").innerText);
                 } else {
-                    console.log(firstClassValue, economyClassValue, document.getElementById("total").innerText);
+                    console.log(economyClassValue, firstClassValue, document.getElementById("total").innerText);
+
                 }
+
 
             }
 
