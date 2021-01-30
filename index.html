@@ -78,7 +78,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p id="subTotal">$500
+                        <p id="subTotal">$000
                         </p>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p id="tax">$50</p>
+                        <p id="tax">$00</p>
                     </div>
                 </div>
                 <hr>
@@ -97,7 +97,7 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <pid id="total">$550</pid>
+                        <pid id="total">$000</pid>
                     </div>
                 </div>
             </div>
@@ -105,10 +105,12 @@
 
 
         </div>
-        <div id="text-show-one"> </div>
-        <div id="text-show-two"> </div>
-        <div id="text-show-three"> </div>
-        <div id="text-show-four"> </div>
+        <div id="booking-status-one">
+
+        </div>
+        <div id="booking-status-two"> </div>
+        <div id="booking-status-four"></div>
+        <div id="booking-status-three"></div>
 
 
 
@@ -178,31 +180,32 @@
                 const economyClassValue = document.getElementById("economy-count").value
                 if (firstClassValue == 0 && economyClassValue == 0) {
                     document.getElementById("book-now").style.display = "none";
-                    document.getElementById("text-show-one").style.display = "block";
-                    document.getElementById("text-show-one").innerText = ("You didn't purchases anything. Please try again. Thankyou.");
+                    document.getElementById("booking-status-one").style.display = "block";
+                    document.getElementById("booking-status-one").innerText = ("You didn't purchases anything. Please try again. Thankyou.");
 
                 } else if (firstClassValue == 0) {
                     document.getElementById("book-now").style.display = "none";
-                    document.getElementById("text-show-two").style.display = "block";
-                    document.getElementById("text-show-two").innerText = ("You have purchased" + " " + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes. Thankyou for staying with us.");
+                    document.getElementById("booking-status-two").style.display = "block";
+                    document.getElementById("booking-status-two").innerText = ("You have purchased" + " " + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes. Thankyou for staying with us.");
                 } else if (economyClassValue == 0) {
                     document.getElementById("book-now").style.display = "none";
-                    document.getElementById("text-show-three").style.display = "block";
-                    document.getElementById("text-show-three").innerText = ("You have purchased" + " " + firstClassValue + " " + " first class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes. Thankyou for staying with us.");
+                    document.getElementById("booking-status-three").style.display = "block";
+                    document.getElementById("booking-status-three").innerText = ("You have purchased" + " " + firstClassValue + " " + " first class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes. Thankyou for staying with us.");
 
                 } else {
                     document.getElementById("book-now").style.display = "none";
-                    document.getElementById("text-show-four").style.display = "block";
-                    document.getElementById("text-show-four").innerText = ("You have purchased" + " " + firstClassValue + " " + "first class tickets" + "  " + "& " + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes. Thankyou for staying with us.");
+                    document.getElementById("booking-status-four").style.display = "block";
+                    document.getElementById("booking-status-four").innerText = ("You have purchased" + " " + firstClassValue + " " + "first class tickets" + "  " + "& " + economyClassValue + " " + "economy class tickets and your total cost for that  " + " " + document.getElementById("total").innerText + " " + ", tax includes. Thankyou for staying with us.");
 
 
                 }
             }
             //Function for booking result end
         </script>
-        <!--JavaScript Start-->
+        <!--JavaScript End-->
 
-        <!--Thank You-->
+
 </body>
 
 </html>
+<!--Thank You-->

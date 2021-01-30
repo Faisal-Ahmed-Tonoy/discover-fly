@@ -144,9 +144,9 @@
             justify-content: space-between;
         }
         
-        #text-show-one {
+        #booking-status-one {
             background-image: linear-gradient(to right, #e91e63, rgb(194 99 55));
-            padding: 143px 40px 91px 42px;
+            padding: 70px 40px 91px 42px;
             border-radius: 8px;
             float: left;
             display: none;
@@ -160,7 +160,7 @@
             color: white;
         }
         
-        #text-show-two {
+        #booking-status-two {
             background-image: linear-gradient(to right, #1627f5, rgb(55 137 194));
             padding: 57px 26px 0px 20px;
             border-radius: 8px;
@@ -176,7 +176,7 @@
             color: white;
         }
         
-        #text-show-three {
+        #booking-status-three {
             background-image: linear-gradient(to right, #1627f5, rgb(55 137 194));
             padding: 57px 26px 0px 20px;
             border-radius: 8px;
@@ -192,7 +192,7 @@
             color: white;
         }
         
-        #text-show-four {
+        #booking-status-four {
             background-image: linear-gradient(to right, #1627f5, rgb(55 137 194));
             padding: 57px 26px 0px 20px;
             border-radius: 8px;
