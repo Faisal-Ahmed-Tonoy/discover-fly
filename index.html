@@ -173,7 +173,9 @@
             }
 
             function myFunction() {
-                if ((document.getElementById("first-count").value) == 0 && (document.getElementById("economy-count").value) == 0) {
+                const firstClassValue = document.getElementById("first-count").value;
+                const economyClassValue = document.getElementById("economy-count").value
+                if (firstClassValue == 0 && economyClassValue == 0) {
                     console.log("hello");
                 } else {
                     console.log("new");
